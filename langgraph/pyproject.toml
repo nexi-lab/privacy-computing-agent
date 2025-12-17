@@ -1,0 +1,22 @@
+[project]
+name = "nexus-tsql"
+version = "0.1.0"
+description = "LangGraph ReAct Agent for tsql with Nexus Filesystem Integration"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=1.0.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "nexus-ai-fs>=0.5.3",
+    "langgraph-cli[inmem]>=0.4.9",
+    "docker>=7.1.0",
+    "cryptography>=44.0.3",
+    "langgraph-sdk>=0.2.12",
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["react_agent", "nexus_tools"]

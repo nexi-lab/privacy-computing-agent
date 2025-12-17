@@ -1,0 +1,14 @@
+{
+  "participants": [
+    {
+      "party_code": "_NODE_NAME_",
+      "endpoint": "_NODE_SERVER_URL_",
+      "pubkey": "_NODE_PUBKEY_"
+    },
+    {
+      "party_code": "_PARTY_NAME_",
+      "endpoint": "_PARTY_SERVER_URL_",
+      "pubkey": "_PARTY_PUBKEY_"
+    }
+  ]
+}

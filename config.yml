@@ -1,0 +1,29 @@
+intra_server:
+  protocol: http
+  host: 0.0.0.0
+  port: 8080
+inter_server:
+  protocol: http
+  port: 8081
+log_level: debug
+# node name
+party_code: _NODE_NAME_
+session_expire_time: 24h
+session_expire_check_time: 1m
+party_info_file: "/home/user/config/party_info.json"
+private_key_path: "/home/user/config/ed25519key.pem"
+intra_host: 127.0.0.1:8080
+engine:
+  timeout: 120s
+  protocol: https
+  content_type: application/json
+  uris:
+    - for_peer: _NODE_ENGINE_URL_
+      for_self: 127.0.0.1:8003
+storage:
+  type: mysql
+  conn_str: "root:@tcp(127.0.0.1:3306)/broker?charset=utf8mb4&parseTime=True&loc=Local&interpolateParams=true"
+  max_idle_conns: 10
+  max_open_conns: 100
+  conn_max_idle_time: 2m
+  conn_max_lifetime: 5m

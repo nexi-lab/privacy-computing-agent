@@ -1,0 +1,26 @@
+services:
+  agent_proxy:
+    image: agent_proxy:latest
+    restart: unless-stopped
+    ports:
+      - "${AGENT_PROXY_PORT:-7000}:2024"
+    volumes:
+      - ./config:/app/config
+    networks:
+      - tsql-network
+
+  tsql:
+    image: tsql-langgraph:latest
+    restart: unless-stopped
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_API_BASE: ${OPENAI_API_BASE:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - tsql-network
+
+networks:
+  tsql-network:
+    driver: bridge
