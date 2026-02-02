@@ -2,8 +2,8 @@
 FROM golang:1.25-alpine AS builder
 
 WORKDIR /build
-COPY tsql_ctl tsql_ctl/
-WORKDIR tsql_ctl
+COPY privacy_computing privacy_computing/
+WORKDIR privacy_computing
 
 RUN go env -w GOPROXY=https://goproxy.cn,direct
 RUN go mod tidy
@@ -41,7 +41,7 @@ COPY my.cnf /etc/mysql/my.cnf
 COPY broker /home/user/broker
 COPY brokerctl /home/user/brokerctl
 COPY scqlengine /home/user/scqlengine
-COPY --from=builder /build/tsql_ctl/tsqlctl /home/user/tsqlctl
+COPY --from=builder /build/privacy_computing/tsqlctl /home/user/tsqlctl
 
 ENV MYSQL_ALLOW_EMPTY_PASSWORD=true
 
