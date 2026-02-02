@@ -340,8 +340,4 @@ docker logs tsql_<user>
 
 ## 许可证
 
-[待补充]
-
-## 联系方式
-
-[待补充]
+Apache License 2.0
