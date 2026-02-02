@@ -1,6 +1,6 @@
 # 数牍隐私计算 AI Agent
 
-基于 LangGraph 和 SecretFlow SCQL 的隐私计算智能代理系统，支持多用户协作完成联邦 SQL 查询和隐私求交任务。
+基于 LangGraph 的隐私计算智能代理系统，支持多用户协作完成联邦 SQL 查询和隐私求交任务。
 
 ## 项目简介
 
@@ -10,7 +10,7 @@
 
 - **智能任务协调**: AI Agent 自动识别角色（发起方/协作方），协调完整的隐私计算流程
 - **多用户支持**: 通过代理层实现用户认证、请求转发和身份识别
-- **联邦 SQL**: 基于 SecretFlow SCQL 实现安全的多方联合查询
+- **联邦 SQL**: 基于 SQL 实现安全的多方联合查询
 - **隐私求交**: 支持 PSI（Private Set Intersection）等隐私计算协议
 - **文件系统集成**: 与 Nexus 文件系统深度集成，支持数据集管理
 - **容器化部署**: 完整的 Docker 容器化方案，支持一键部署
@@ -42,7 +42,7 @@
                ▼
 ┌─────────────────────────────────────┐
 │  Privacy Computing Engine (Port 8000)│
-│  - 基于 SCQL 的隐私计算              │
+│  - 基于 SQL 的隐私计算              │
 │  - 联邦 SQL 执行                     │
 │  - 加密协议实现                      │
 └─────────────────────────────────────┘
@@ -292,7 +292,6 @@ AGENT_PROXY_PORT=7000
 
 - **后端语言**: Go 1.21+, Python 3.11+
 - **AI 框架**: LangGraph, LangChain
-- **隐私计算**: SecretFlow SCQL
 - **容器化**: Docker, Docker Compose
 - **文件系统**: Nexus Remote FS
 - **日志**: logrus (Go), logging (Python)
